@@ -1,1 +1,174 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+// body{
+//     background-color: #0094da;
+// }
+
+body{
+    background-image: url('../src/assets/background.png');
+    height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.hero-color {
+    background-color: #ffffff;
+}
+.bg-cor{
+    background-color: #cccccc;
+}
+
+.bg-vacina{
+    background-color: #0094da;
+}
+.center {
+    display: flex;
+    justify-content: center;
+  }
+
+.btn-outline-primary {
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.btn-outline-primary:hover {
+    color: var(--color-hero);
+    background-color: var(--color-white);
+}
+
+.image-hero {
+    height: 72vh;
+    width: 100%;
+}
+
+.image-slider {
+    height: 42vh;
+}
+
+.img-home {
+    margin-top: 5%;
+}
+
+.text-section {
+    margin-top: 2%;
+}
+
+.text-section2 {
+    margin-top: -2%;
+}
+
+.mainnet-button {
+    border-radius: 15px;
+    width: 30%;
+    height: 8vh;
+}
+
+.about {
+    margin-top: 10%;
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 40vh;
+}
+
+.services1, .services2, .services3 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.image-service {
+    margin-top: 5%;
+}
+
+.token {
+    height: 25vh;
+    background: var(--background-color);
+    margin-top: 5%;
+}
+
+.token-button {
+    background-color: vaR(--color-hero);
+}
+
+.btn-products {
+    width: 80%;
+}
+
+footer {
+    background: var(--background-color);
+}
+
+form {
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+.btn-color {
+    color: var(--color-white);
+    background-color: var(--color-hero);
+}
+
+.custom {
+    width: 25%;
+    height: 92%;
+}
+
+.title-services {
+    text-align: left;
+}
+
+.link-navbar:hover {
+    background-color: var(--color-hover);
+    transition: 0.6s;
+}
+
+.textcolor{
+    color: #FAB005;
+}
+
+@media(max-width: 567px) {
+    .services1, .services2, .services3 {
+        margin-top: 2%;
+    }
+
+    .token {
+        height: 25vh;
+        margin-top: 18%;
+    }
+
+    .img-home {
+        display: flex;
+        justify-content: center;
+        margin-top: 0;
+    }
+
+    .img-home2 {
+        display: flex;
+        justify-content: right;
+        margin-top: 0;
+    }
+
+    .text-section {
+        text-align: center;
+    }
+
+    .title-mainnet {
+        font-size: 0.9rem;
+    }
+
+    .custom {
+        width: 32%;
+    }
+
+    .title-services {
+        text-align: center;
+    }
+
+    .imagens-carrousel {
+        width: 100%;
+    }
+}
