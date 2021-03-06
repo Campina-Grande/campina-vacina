@@ -38,7 +38,8 @@ export class PreagendamentoComponent implements OnInit {
         numero: ['', [Validators.required]],
         bairro: ['', [Validators.required]],
         cidade: ['', [Validators.required]],
-        uf: ['', [Validators.required]]
+        uf: ['', [Validators.required]],
+        recaptchaLogin: ['', [Validators.required]]
 
       });
   }

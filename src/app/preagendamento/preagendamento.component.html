@@ -69,33 +69,93 @@
 
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="nascimento">CEP</label>
                                 
-                                  <input type="text" class="form-control" id="cep" placeholder="CEP da Rua"
+                                  <input type="text" class="form-control" id="cep" placeholder="Digite o CEP"
                                     formControlName="cep"
                                     [ngClass]="{ 'is-invalid': form.controls.cep.invalid && form.controls.cep.dirty, 'is-valid': form.controls.cep.valid }" [(ngModel)]="cep.cep">
+                                    
                                   <span class="text-danger" *ngIf="form.controls.cep.invalid && form.controls.cep.dirty">
                                     <p *ngIf="form.controls.cep.errors.required">CEP é obrigatório</p>
                                     <p *ngIf="form.controls.cep.errors.cep">CEP inválido</p>
                                   </span>
-                                  
-                                
-                                <div class="col-sm-2 text-right"> <button class="btn btn-primary text-right" type="button" (click)="buscarCep()"><i class="fa fa-search" aria-hidden="true"></i></button></div>
-                              </div>
-                        </div>
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="cidade">Cidade</label>
-                                <input type="text" class="form-control" value="CAMPINA GRANDE" disabled id="cidade" aria-describedby="cidade">
+                                
+                                 
+                              </div>
                              
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="nascimento">&nbsp;</label>
+                                <input type="submit" value="Buscar" (click)="buscarCep()" class="form-control btn btn-primary">
+                           
+                            </div>
+                        </div>
+                       
+
+                      
+
+                     
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="logradouro">Logradouro</label>
+                                
+                                  <input type="text" class="form-control" id="logradouro" placeholder="Logradouro"
+                                    formControlName="logradouro"
+                                    [ngClass]="{ 'is-invalid': form.controls.logradouro.invalid && form.controls.logradouro.dirty, 'is-valid': form.controls.logradouro.valid }" [(ngModel)]="cep.logradouro">
+                                  <span class="text-danger" *ngIf="form.controls.logradouro.invalid && form.controls.logradouro.dirty">
+                                    <p *ngIf="form.controls.logradouro.errors.required">Logradouro é obrigatório</p>
+                                    <p *ngIf="form.controls.logradouro.errors.logradouro">Logradouro inválido</p>
+                                  </span>
+                                
                               </div>
                         </div>
                     </div>
 
-                 
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="estado">Bairro</label>
+                                
+                                  <input type="text" class="form-control" id="bairro" placeholder="Bairro"
+                                    formControlName="bairro"
+                                    [ngClass]="{ 'is-invalid': form.controls.bairro.invalid && form.controls.bairro.dirty, 'is-valid': form.controls.bairro.valid }" [(ngModel)]="cep.bairro">
+                                  <span class="text-danger" *ngIf="form.controls.bairro.invalid && form.controls.bairro.dirty">
+                                    <p *ngIf="form.controls.bairro.errors.required">E-mail é obrigatório</p>
+                                    <p *ngIf="form.controls.bairro.errors.bairro">E-mail inválido</p>
+                                  </span>
+                                
+                              </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="estado">Número</label>
+                                
+                                  <input type="number" class="form-control" id="numero" placeholder="Número"
+                                    formControlName="numero"
+                                    [ngClass]="{ 'is-invalid': form.controls.numero.invalid && form.controls.numero.dirty, 'is-valid': form.controls.numero.valid }" [(ngModel)]="cep.numero">
+                                  <span class="text-danger" *ngIf="form.controls.numero.invalid && form.controls.numero.dirty">
+                                    <p *ngIf="form.controls.numero.errors.required">Número é obrigatório</p>
+                                    <p *ngIf="form.controls.numero.errors.numero">Número inválido</p>
+                                  </span>
+                                
+                              </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="complemento">Complemento</label>
+                                <input type="text" class="form-control" id="uf" aria-describedby="complemento" placeholder="Complemento">
+                                
+                              </div>
+                        </div>
+                    </div>
 
                     <div class="row">
                         <div class="col-md-6">
@@ -114,68 +174,32 @@
                               </div>
                         </div>
                     </div>
-                  
-                      <div class="form-group row">
-                        <label for="logradouro" class="text-gray col-sm-4 col-form-label">Rua</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="logradouro" placeholder="Nome da Rua"
-                            formControlName="logradouro"
-                            [ngClass]="{ 'is-invalid': form.controls.logradouro.invalid && form.controls.logradouro.dirty, 'is-valid': form.controls.logradouro.valid }" [(ngModel)]="cep.logradouro">
-                          <span class="text-danger" *ngIf="form.controls.logradouro.invalid && form.controls.logradouro.dirty">
-                            <p *ngIf="form.controls.logradouro.errors.required">Logradouro é obrigatório</p>
-                            <p *ngIf="form.controls.logradouro.errors.logradouro">Logradouro inválido</p>
-                          </span>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="numero" class="text-gray col-sm-4 col-form-label">Número</label>
-                        <div class="col-sm-8">
-                          <input type="number" class="form-control" id="numero" placeholder="Número"
-                            formControlName="numero"
-                            [ngClass]="{ 'is-invalid': form.controls.numero.invalid && form.controls.numero.dirty, 'is-valid': form.controls.numero.valid }" [(ngModel)]="cep.numero">
-                          <span class="text-danger" *ngIf="form.controls.numero.invalid && form.controls.numero.dirty">
-                            <p *ngIf="form.controls.numero.errors.required">Número é obrigatório</p>
-                            <p *ngIf="form.controls.numero.errors.numero">Número inválido</p>
-                          </span>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="bairro" class="text-gray col-sm-4 col-form-label">Bairro</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="bairro" placeholder="Nome do Bairro"
-                            formControlName="bairro"
-                            [ngClass]="{ 'is-invalid': form.controls.bairro.invalid && form.controls.bairro.dirty, 'is-valid': form.controls.bairro.valid }" [(ngModel)]="cep.bairro">
-                          <span class="text-danger" *ngIf="form.controls.bairro.invalid && form.controls.bairro.dirty">
-                            <p *ngIf="form.controls.bairro.errors.required">E-mail é obrigatório</p>
-                            <p *ngIf="form.controls.bairro.errors.bairro">E-mail inválido</p>
-                          </span>
-                        </div>
-                      </div>
+                 
 
-                      <div class="form-group row">
-                        <label for="cidade" class="text-gray col-sm-4 col-form-label">Cidade</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="cidade" placeholder="Nome da Cidade"
+                  
+                  
+                     
+                     
+                   
+
+                     
+                          <input type="text" hidden class="form-control" id="cidade" placeholder="Nome da Cidade"
                             formControlName="cidade"
                             [ngClass]="{ 'is-invalid': form.controls.cidade.invalid && form.controls.cidade.dirty, 'is-valid': form.controls.cidade.valid }" [(ngModel)]="cep.cidade">
                           <span class="text-danger" *ngIf="form.controls.cidade.invalid && form.controls.cidade.dirty">
                             <p *ngIf="form.controls.cidade.errors.required">Cidade é obrigatório</p>
                             <p *ngIf="form.controls.cidade.errors.cidade">Cidade inválido</p>
                           </span>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="uf" class="text-gray col-sm-4 col-form-label">Estado</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="uf" placeholder="Nome do Estado"
+                       
+                      
+                          <input type="text" hidden class="form-control" id="uf" placeholder="Nome do Estado"
                             formControlName="uf"
                             [ngClass]="{ 'is-invalid': form.controls.uf.invalid && form.controls.uf.dirty, 'is-valid': form.controls.uf.valid }" [(ngModel)]="cep.estado">
                           <span class="text-danger" *ngIf="form.controls.uf.invalid && form.controls.uf.dirty">
                             <p *ngIf="form.controls.uf.errors.required">uf é obrigatório</p>
                             <p *ngIf="form.controls.uf.errors.uf">uf inválido</p>
                           </span>
-                        </div>
-                      </div>
+                    
                     
                     <div class="row">
                         <div class="col-md-12">
@@ -191,7 +215,7 @@
                    
                     </div>
                    
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Salvar</button>
                   </form>
                
             </div>
