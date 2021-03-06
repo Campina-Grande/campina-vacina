@@ -7,6 +7,12 @@ import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { VacinaComponent } from './vacina/vacina.component';
+import { PreagendamentoComponent } from './preagendamento/preagendamento.component';
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
+import { AngularValidateBrLibModule } from 'angular-validate-br';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CepService } from './services/cep.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,13 +20,21 @@ import { VacinaComponent } from './vacina/vacina.component';
     HeaderComponent,
     NavbarComponent,
     HomeComponent,
-    VacinaComponent
+    VacinaComponent,
+    PreagendamentoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    RecaptchaModule,  
+    RecaptchaFormsModule,
+    AngularValidateBrLibModule
   ],
-  providers: [],
+  providers: [
+    CepService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
