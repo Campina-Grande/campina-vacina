@@ -13,7 +13,9 @@ import { AngularValidateBrLibModule } from 'angular-validate-br';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CepService } from './services/cep.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
 
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     RecaptchaModule,  
     RecaptchaFormsModule,
-    AngularValidateBrLibModule
+    AngularValidateBrLibModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [
     CepService,
