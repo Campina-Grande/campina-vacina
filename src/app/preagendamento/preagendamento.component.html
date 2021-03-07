@@ -187,7 +187,7 @@
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="estado">Telefone celular *</label>
+                                <label for="estado">Telefone celular <b class="text-danger">* </b></label>
                                 <input mask="(00) 00000-0000" class="form-control" prefix="+55 " [showMaskTyped]="true" />
                              
                               </div>
@@ -233,7 +233,8 @@
                    
                     </div>
                    
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Salvar</button>
+                    <button type="button" [disabled]="form.invalid" 
+                     class="btn btn-primary btn-lg btn-block" (click)="salvar()">Salvar</button>
                   </form>
                
             </div>

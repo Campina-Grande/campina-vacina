@@ -14,6 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CepService } from './services/cep.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { ConcluidoComponent } from './concluido/concluido.component';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 @NgModule({
@@ -23,13 +25,15 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     NavbarComponent,
     HomeComponent,
     VacinaComponent,
-    PreagendamentoComponent
+    PreagendamentoComponent,
+    ConcluidoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    SweetAlert2Module,
     RecaptchaModule,  
     RecaptchaFormsModule,
     AngularValidateBrLibModule,

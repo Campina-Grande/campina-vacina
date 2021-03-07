@@ -3,6 +3,8 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { ValidateBrService } from 'angular-validate-br';
 import { CepService } from '../services/cep.service';
 import { Cep } from 'src/app/models/cep';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-preagendamento',
@@ -28,6 +30,7 @@ export class PreagendamentoComponent implements OnInit {
 
   constructor(
     private _validateBr: ValidateBrService,
+    private router: Router,
     private fb: FormBuilder,
     private cepService: CepService
     ) {
@@ -46,6 +49,24 @@ export class PreagendamentoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+ salvar(){
+  Swal.fire({
+    title: `Você confirma o agendamento?`,
+    text: "Esta ação não poderá ser revertida!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sim, confirmo!',
+    cancelButtonText: 'Cancelar'}).then((result) => {
+      if (result.isConfirmed) {
+        let rota;
+         rota = '/conclusao';
+         this.router.navigate([rota]);
+      }
+    })
+ }
 
   buscarCep(){
     this.cepService.buscar(this.cep.cep)
