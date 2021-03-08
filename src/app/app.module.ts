@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxMaskModule, IConfig } from 'ngx-mask'
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { ConcluidoComponent } from './concluido/concluido.component';
+import { LocaisComponent } from './locais/locais.component';
+
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 @NgModule({
@@ -26,7 +28,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     HomeComponent,
     VacinaComponent,
     PreagendamentoComponent,
-    ConcluidoComponent
+    ConcluidoComponent,
+    LocaisComponent
   ],
   imports: [
     BrowserModule,

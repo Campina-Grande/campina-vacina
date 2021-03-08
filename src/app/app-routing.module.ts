@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { PreagendamentoComponent } from './preagendamento/preagendamento.component';
 import { ConcluidoComponent } from './concluido/concluido.component';
+import { LocaisComponent } from './locais/locais.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'header', component: HeaderComponent},
   {path: 'preagendamento', component: PreagendamentoComponent},
   {path: 'conclusao', component: ConcluidoComponent},
+  {path: 'locais', component: LocaisComponent},
   ]  ;
 
 @NgModule({
