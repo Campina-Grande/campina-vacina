@@ -5,6 +5,7 @@ import { CepService } from '../services/cep.service';
 import { Cep } from 'src/app/models/cep';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import emailMask from 'text-mask-addons/dist/emailMask';
 
 @Component({
   selector: 'app-preagendamento',
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./preagendamento.component.scss']
 })
 export class PreagendamentoComponent implements OnInit {
-
+  emailMask = emailMask;
   form: FormGroup;
   cep = new Cep();
   
@@ -42,7 +43,8 @@ export class PreagendamentoComponent implements OnInit {
         bairro: ['', [Validators.required]],
         cidade: ['', [Validators.required]],
         uf: ['', [Validators.required]],
-        recaptchaLogin: ['', [Validators.required]]
+        recaptchaLogin: ['', [Validators.required]],
+        email: ['', [Validators.required]],
 
       });
   }

@@ -1,5 +1,4 @@
 
-
 <app-navbar></app-navbar>
 <div class="progress">
     <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
@@ -10,7 +9,7 @@
     <div class="jumbotron bg-transparent">
        <div class="row text-center">
         <div class="col-md-12 text-center">
-            <img src="../../../assets/logoprefeitura.png" width="320px">
+          <a class="nav-link" [routerLink]="['/']">  <img src="../../../assets/logoprefeitura.png" width="320px"></a>
         </div>
        </div>
        <div class="row text-center">
@@ -38,7 +37,7 @@
                             <div class="form-group">
                                 <label for="cpf">CPF <b class="text-danger">* </b></label>
                                 <input formControlName="cpf" type="text" class="form-control" id="cpf"  mask="000.000.000-00" placeholder="CPF">
-                                
+                                <small id="nome" class="form-text text-muted">Dados protegidos na blockchain</small>
                                 <div class="text-danger" *ngIf="form.get('cpf').invalid && (form.get('cpf').dirty || form.get('cpf').touched)">
                                   <small *ngIf="form.get('cpf').errors.cpfvalidator">Verifique o CPF, está incorreto!</small>
                                   
@@ -76,7 +75,7 @@
                                   <input type="text" class="form-control" id="cep" placeholder="Digite o CEP"
                                     formControlName="cep"
                                     [ngClass]="{ 'is-invalid': form.controls.cep.invalid && form.controls.cep.dirty, 'is-valid': form.controls.cep.valid }" [(ngModel)]="cep.cep">
-                                    
+                                    <small id="nome" class="form-text text-muted">Dados protegidos na blockchain</small>
                                   <span class="text-danger" *ngIf="form.controls.cep.invalid && form.controls.cep.dirty">
                                     <p *ngIf="form.controls.cep.errors.required">CEP é obrigatório</p>
                                     <p *ngIf="form.controls.cep.errors.cep">CEP inválido</p>
@@ -108,7 +107,8 @@
                                   <input type="text" class="form-control" id="logradouro" placeholder="Logradouro"
                                     formControlName="logradouro"
                                     [ngClass]="{ 'is-invalid': form.controls.logradouro.invalid && form.controls.logradouro.dirty, 'is-valid': form.controls.logradouro.valid }" [(ngModel)]="cep.logradouro">
-                                  <span class="text-danger" *ngIf="form.controls.logradouro.invalid && form.controls.logradouro.dirty">
+                                    <small id="nome" class="form-text text-muted">Dados protegidos na blockchain</small>
+                                    <span class="text-danger" *ngIf="form.controls.logradouro.invalid && form.controls.logradouro.dirty">
                                     <p *ngIf="form.controls.logradouro.errors.required">Logradouro é obrigatório</p>
                                     <p *ngIf="form.controls.logradouro.errors.logradouro">Logradouro inválido</p>
                                   </span>
@@ -125,9 +125,10 @@
                                   <input type="text" class="form-control" id="bairro" placeholder="Bairro"
                                     formControlName="bairro"
                                     [ngClass]="{ 'is-invalid': form.controls.bairro.invalid && form.controls.bairro.dirty, 'is-valid': form.controls.bairro.valid }" [(ngModel)]="cep.bairro">
-                                  <span class="text-danger" *ngIf="form.controls.bairro.invalid && form.controls.bairro.dirty">
-                                    <p *ngIf="form.controls.bairro.errors.required">E-mail é obrigatório</p>
-                                    <p *ngIf="form.controls.bairro.errors.bairro">E-mail inválido</p>
+                                    <small id="nome" class="form-text text-muted">Dados protegidos na blockchain</small>
+                                    <span class="text-danger" *ngIf="form.controls.bairro.invalid && form.controls.bairro.dirty">
+                                    <p *ngIf="form.controls.bairro.errors.required">Bairro é obrigatório</p>
+                                    <p *ngIf="form.controls.bairro.errors.bairro">Bairro inválido</p>
                                   </span>
                                 
                               </div>
@@ -140,7 +141,8 @@
                                   <input type="number" class="form-control" id="numero" placeholder="Número"
                                     formControlName="numero"
                                     [ngClass]="{ 'is-invalid': form.controls.numero.invalid && form.controls.numero.dirty, 'is-valid': form.controls.numero.valid }" [(ngModel)]="cep.numero">
-                                  <span class="text-danger" *ngIf="form.controls.numero.invalid && form.controls.numero.dirty">
+                                    
+                                    <span class="text-danger" *ngIf="form.controls.numero.invalid && form.controls.numero.dirty">
                                     <p *ngIf="form.controls.numero.errors.required">Número é obrigatório</p>
                                     <p *ngIf="form.controls.numero.errors.numero">Número inválido</p>
                                   </span>
@@ -162,7 +164,7 @@
                             <div class="form-group">
                                 <label for="estado">Estado</label>
                                 <input type="text" class="form-control" id="uf" aria-describedby="uf" disabled value="PARAIBA">
-                                
+                                <small id="nome" class="form-text text-muted">Dados protegidos na blockchain</small>
                               </div>
                         </div>
 
@@ -170,14 +172,14 @@
                             <div class="form-group">
                                 <label for="cidade">Cidade</label>
                                 <input type="text" class="form-control" value="CAMPINA GRANDE" disabled id="cidade" aria-describedby="cidade">
-                             
+                                <small id="nome" class="form-text text-muted">Dados protegidos na blockchain</small>
                               </div>
                         </div>
                     </div>
                  
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="estado">Telefone contato</label>
                                 <input mask="(00) 0000-0000" class="form-control" prefix="+55 " [showMaskTyped]="true" />
@@ -185,13 +187,21 @@
                               </div>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="estado">Telefone celular <b class="text-danger">* </b></label>
                                 <input mask="(00) 00000-0000" class="form-control" prefix="+55 " [showMaskTyped]="true" />
                              
                               </div>
                         </div>
+
+                        <div class="col-md-4">
+                          <div class="form-group">
+                              <label for="estado">E-mail <b class="text-danger">* </b></label>
+                              <input [textMask]="{mask: emailMask}" class="form-control"  formControlName="email" placeholder="exemplo@dominio.com.br">
+                           
+                            </div>
+                      </div>
                     </div>
 
                   

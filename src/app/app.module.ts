@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -17,7 +17,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask'
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { ConcluidoComponent } from './concluido/concluido.component';
 import { LocaisComponent } from './locais/locais.component';
-
+import { TextMaskModule } from 'angular2-text-mask';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 @NgModule({
@@ -40,7 +40,10 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     RecaptchaModule,  
     RecaptchaFormsModule,
     AngularValidateBrLibModule,
+    TextMaskModule,
+    BrowserAnimationsModule,
     NgxMaskModule.forRoot(),
+    
   ],
   providers: [
     CepService,
